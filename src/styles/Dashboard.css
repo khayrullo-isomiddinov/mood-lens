@@ -1,3 +1,4 @@
+/* 🌟 Dashboard Container */
 .dashboard {
   width: 80%;
   max-width: 1200px;
@@ -7,28 +8,38 @@
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 4rem; /* Adds space between the navbar and the dashboard */
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* 🌟 Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎭 Dashboard Title */
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #221f1f;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] .dashboard-title {
-  font-size: 2.5rem;
-  font-weight: bold;
   background: linear-gradient(90deg, #ff7b00, #ffae42);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0px 0px 20px rgba(255, 165, 0, 0.8), 0px 0px 50px rgba(255, 100, 0, 0.6);
-  margin-bottom: 1rem;
 }
 
-[data-theme="light"] .dashboard-title {
-  font-size: 2.5rem;
-  color: #221f1f;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-/* Dashboard Card Container */
+/* 📌 Dashboard Cards Layout */
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -36,80 +47,38 @@
   margin-bottom: 2rem;
 }
 
-/* Dashboard Card Style */
+/* 🎭 Dashboard Cards */
 .dashboard-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInCard 0.6s ease-in-out forwards;
 }
 
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎨 Card Titles */
 .dashboard-card h3 {
   font-size: 1.8rem;
   color: #333;
   margin-bottom: 1rem;
 }
 
-[data-theme="dark"] .dashboard-card h3 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.dashboard-card p {
-  color: #555;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-[data-theme="dark"] .dashboard-card p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.dashboard-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Buttons */
-.dashboard-btn {
-  padding: 0.8rem 1.6rem;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.dashboard-btn:hover {
-  background-color: #45a049;
-}
-
-/* Logout Button */
-.logout-btn {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  background-color: #e63946;
-  /* Red for logout */
-  border: none;
-  border-radius: 10px;
-  margin-top: 3rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.logout-btn:hover {
-  background-color: #d90429;
-}
-
+/* 🌓 Dark Mode for Dashboard Cards */
 [data-theme="dark"] .dashboard {
   background-color: #1e1e2f;
   color: #f1f1f1;
@@ -120,9 +89,60 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+[data-theme="dark"] .dashboard-card h3 {
+  color: #ffffff;
+}
+
+.dashboard-card p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="dark"] .dashboard-card p {
+  color: #ffffff;
+}
+
+/* 🎨 Buttons */
+.dashboard-btn {
+  padding: 0.8rem 1.6rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* 🔴 Logout Button */
+.logout-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #e63946;
+  border: none;
+  border-radius: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #d90429;
+  transform: scale(1.05);
+}
+
+/* 🌓 Dark Mode for Buttons */
 [data-theme="dark"] .dashboard-btn {
   background-color: #34a853;
-  /* Green button for dark mode */
 }
 
 [data-theme="dark"] .dashboard-btn:hover {
@@ -137,7 +157,37 @@
   background-color: #d90429;
 }
 
-/* Mobile Optimization */
+/* 🔄 Loading Spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 📱 Mobile Optimization */
 @media (max-width: 768px) {
   .dashboard {
     width: 95%;
