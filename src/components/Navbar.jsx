@@ -20,8 +20,14 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); 
-    setIsAuthenticated(false);
-    navigate("/"); // Redirects to home after logout
+    setIsAuthenticated(false); // ✅ Navbar updates immediately
+
+    // ✅ Force a refresh on GitHub Pages to update navbar state
+    if (window.location.hostname.includes("github.io")) {
+      window.location.reload();
+    } else {
+      navigate("/"); // ✅ Redirects to home on local environment
+    }
   };
 
   return (
@@ -35,6 +41,7 @@ const Navbar = () => {
           <Link to="/ar-experience" className={location.pathname === "/ar-experience" ? "active-link" : ""}>AR Experience</Link>
           <Link to="/social-feed" className={location.pathname === "/social-feed" ? "active-link" : ""}>Social Feed</Link>
           <Link to="/settings" className={location.pathname === "/settings" ? "active-link" : ""}>Settings</Link>
+          <button onClick={handleLogout} className="logout-button">Logout</button>
         </div>
       ) : null}
     </nav>
