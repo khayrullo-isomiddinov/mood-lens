@@ -1,10 +1,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // Backend API URL
+  baseURL: "http://localhost:5000/api",
 });
 
-// 🔐 Signup API
 export const signup = async (userData) => {
   try {
     const response = await API.post("/auth/signup", userData);
@@ -14,7 +13,6 @@ export const signup = async (userData) => {
   }
 };
 
-// 🔐 Login API
 export const login = async (userData) => {
   try {
     const response = await API.post("/auth/login", userData);
