@@ -16,27 +16,31 @@ const Dashboard = () => {
     const fetchUser = async () => {
       try {
         const response = await fetch("http://localhost:5000/api/auth/me", {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: `Bearer ${token}` }, // Fixed incorrect string formatting
         });
-        const data = await response.json();
 
+        const data = await response.json();
         console.log("User data from API:", data);
 
         if (data.user) {
           setUser(data.user);
         } else {
-          localStorage.removeItem("token");
-          navigate("/");
+          handleLogout(); // If user is not found, log them out
         }
       } catch (err) {
         console.error("Error fetching user:", err);
-        localStorage.removeItem("token");
-        navigate("/");
+        handleLogout(); // Handle network errors
       }
     };
 
     fetchUser();
   }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/"); // Redirect to home
+    window.dispatchEvent(new Event("storage")); // Notify other components (Navbar)
+  };
 
   return (
     <div className="dashboard">
@@ -44,21 +48,18 @@ const Dashboard = () => {
         <>
           <h2 className="dashboard-title">Welcome, {user.name}!</h2>
           <div className="dashboard-cards">
-            {/* Mood Tracking Section */}
             <div className="dashboard-card">
               <h3>Track Your Mood</h3>
               <p>Log and track your emotional trends.</p>
               <button className="dashboard-btn">Start Mood Tracking</button>
             </div>
 
-            {/* AI Mood Analysis Section */}
             <div className="dashboard-card">
               <h3>AI Mood Insights</h3>
               <p>Get personalized insights from AI based on your mood.</p>
               <button className="dashboard-btn">Analyze Mood</button>
             </div>
 
-            {/* Social Sharing Section */}
             <div className="dashboard-card">
               <h3>Social Mood Feed</h3>
               <p>Connect with friends and share mood updates.</p>
@@ -66,11 +67,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Logout Button */}
-          <button className="logout-btn" onClick={() => {
-            localStorage.removeItem("token");
-            navigate("/");
-          }}>Logout</button>
+          <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </>
       )}
     </div>

@@ -9,7 +9,7 @@ const AuthModal = ({ isOpen, onClose, initialLogin }) => {
     setIsLogin(initialLogin);
   }, [initialLogin]);
 
-  if (!isOpen) return null; // ✅ Prevents rendering when closed
+  if (!isOpen) return null;
 
   return (
     <div className="auth-modal-overlay">
