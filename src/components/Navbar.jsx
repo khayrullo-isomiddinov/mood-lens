@@ -41,7 +41,6 @@ const Navbar = () => {
           <Link to="/ar-experience" className={location.pathname === "/ar-experience" ? "active-link" : ""}>AR Experience</Link>
           <Link to="/social-feed" className={location.pathname === "/social-feed" ? "active-link" : ""}>Social Feed</Link>
           <Link to="/settings" className={location.pathname === "/settings" ? "active-link" : ""}>Settings</Link>
-          <button onClick={handleLogout} className="logout-button">Logout</button>
         </div>
       ) : null}
     </nav>
