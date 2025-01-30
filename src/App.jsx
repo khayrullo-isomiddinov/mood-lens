@@ -15,9 +15,7 @@ import SocialFeed from "./pages/SocialFeed";
 import './styles/global.css'; 
 
 const App = () => {
-  const getInitialTheme = () => localStorage.getItem("theme") === "dark";
-  
-  const [darkMode, setDarkMode] = useState(getInitialTheme);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark");
   const [modalOpen, setModalOpen] = useState(false);
   const [initialLogin, setInitialLogin] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
@@ -35,13 +33,13 @@ const App = () => {
     return () => window.removeEventListener("storage", checkAuth);
   }, []);
 
-  // 🔥 Fix: Logout & force re-render
   const handleLogout = () => {
     localStorage.removeItem("token");
-    setIsAuthenticated(false); // ✅ Navbar updates instantly
+    setIsAuthenticated(false);
 
+    // ✅ Fix: Force GitHub Pages to reload and reflect the change
     if (window.location.hostname.includes("github.io")) {
-      window.location.reload(); // ✅ Forces GitHub Pages to refresh properly
+      window.location.href = "/";
     }
   };
 
