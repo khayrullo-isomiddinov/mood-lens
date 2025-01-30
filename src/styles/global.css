@@ -1,0 +1,105 @@
+/* global.css - Global styles for the entire app */
+
+/* Reset some default browser styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic Body Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Choose your preferred font */
+  line-height: 1.6;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #333; /* Default text color */
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+/* Common link styles */
+a {
+  text-decoration: none;
+  color: inherit; /* Keep the inherited color */
+}
+
+a:hover {
+  color: #f97316; /* Accent color on hover */
+  text-decoration: underline;
+}
+
+/* Common Button Styles */
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Apply a border box model universally */
+* {
+  box-sizing: border-box;
+}
+
+/* Global container */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Basic heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Adjust font size for headings */
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+/* Global form input styles */
+input, textarea, select {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+/* Apply default styles for cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+

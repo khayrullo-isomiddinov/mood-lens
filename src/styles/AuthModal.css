@@ -1,0 +1,173 @@
+/* 🌟 Next-Level Auth Modal Overlay */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: overlayFadeIn 0.5s ease-in-out;
+}
+
+/* 🔥 Cinematic Modal Box */
+.auth-modal {
+  background: rgba(255, 255, 255, 0.15); /* Glassmorphic Effect */
+  backdrop-filter: blur(20px); /* Frosted Glass */
+  padding: 2.5rem;
+  width: 420px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  animation: modalSlideIn 0.5s ease-in-out forwards;
+  opacity: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🌑 Dark Mode - Glassmorphic Dark Magic */
+[data-theme="dark"] .auth-modal {
+  background: rgba(30, 30, 50, 0.85);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ❌ Close Button - Now Cooler */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #555;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #ff4444;
+  transform: scale(1.2) rotate(180deg);
+}
+
+[data-theme="dark"] .close-btn {
+  color: white;
+}
+
+[data-theme="dark"] .close-btn:hover {
+  color: #ff5555;
+}
+
+/* 🎭 Smooth Text & Interaction */
+.toggle-text {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔄 Animated Toggle Link */
+.toggle-text span {
+  color: #ff7b00;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.toggle-text span:hover {
+  color: #ff4500;
+  text-decoration: underline;
+}
+
+/* 🔥 Inputs - Glow Effect on Focus */
+.auth-form input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form input:focus {
+  border: 1px solid #ff7b00;
+  box-shadow: 0px 0px 10px rgba(255, 123, 0, 0.7);
+}
+
+[data-theme="dark"] .auth-form input {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+[data-theme="dark"] .auth-form input:focus {
+  box-shadow: 0px 0px 12px rgba(255, 165, 0, 1);
+}
+
+/* 🚀 Animated Login Button */
+.auth-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(45deg, #ff7b00, #ffae42);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.auth-submit:hover {
+  background: linear-gradient(45deg, #ff4500, #ffcc00);
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.8);
+}
+
+/* 🌌 Dark Mode - Login Button */
+[data-theme="dark"] .auth-submit {
+  background: linear-gradient(45deg, #ff5733, #ffae42);
+}
+
+[data-theme="dark"] .auth-submit:hover {
+  background: linear-gradient(45deg, #ff4500, #ffcc00);
+}
+
+/* 🎬 Fade-In Overlay */
+@keyframes overlayFadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* 🎬 Slide-In Modal */
+@keyframes modalSlideIn {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Tweaks */
+@media (max-width: 500px) {
+  .auth-modal {
+      width: 90%;
+      padding: 2rem;
+  }
+  .home-title {
+      font-size: 3rem;
+  }
+  .home-subtitle {
+      font-size: 1.2rem;
+  }
+}

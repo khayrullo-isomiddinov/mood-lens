@@ -1,0 +1,101 @@
+/* 🌟 AR Experience Page Styling */
+.ar-experience-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px); /* Frosted glass effect */
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* 🎨 AR Experience Title */
+.ar-experience-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7b00, #ffae42);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 20px rgba(255, 165, 0, 0.8), 0px 0px 40px rgba(255, 100, 0, 0.6);
+    margin-bottom: 1rem;
+}
+
+/* 🌊 AR Experience Description */
+.ar-experience-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 🚀 AR Experience Buttons */
+.ar-experience-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #4CAF50, #45d648); /* Fresh green */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    margin: 0.5rem;
+}
+
+.ar-experience-btn:hover {
+    background: linear-gradient(45deg, #45d648, #34a853);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.7);
+}
+
+/* 🧠 AR Experience Info Section */
+.ar-experience-info {
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ar-info-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0;
+}
+
+.ar-info-list li {
+    margin: 1rem 0;
+}
+
+/* 🎇 Smooth Page Entry Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    .ar-experience-container {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .ar-experience-title {
+        font-size: 2.5rem;
+    }
+
+    .ar-experience-description {
+        font-size: 1rem;
+    }
+
+    .ar-experience-btn {
+        width: 100%;
+    }
+}

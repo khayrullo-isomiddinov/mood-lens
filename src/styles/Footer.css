@@ -1,0 +1,130 @@
+/* 🌟 Legendary Footer Design with Vibrant Colors */
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #2a2e52, #1f2159); /* Premium dark blues and purples */
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem; /* Compact footer */
+  font-size: 1rem;
+  overflow: hidden;
+  border-top: 5px solid #f97316; /* Glowing line at the top */
+  transition: background 0.5s ease, padding 0.3s ease;
+  animation: footerSlideIn 0.7s ease-in-out forwards;
+}
+
+/* 🌀 Dynamic Footer Slide-In */
+@keyframes footerSlideIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* 💎 Glassmorphic Effect */
+.footer-content {
+  background: rgba(255, 255, 255, 0.1); /* Frosted glass */
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+/* 🎭 MoodLens Title - Glowing Effect with Neon */
+.footer-title {
+  color: #f97316;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 0px 0px 25px rgba(255, 165, 0, 1), 0px 0px 60px rgba(255, 100, 0, 0.6); /* Glowing neon text */
+}
+
+/* ✨ Text Style for Footer */
+.footer p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem; /* Slightly smaller font size */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🎨 Footer Navigation with Hover Effects */
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+  position: relative;
+}
+
+.footer-nav a:hover {
+  color: #f97316;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 25px rgba(255, 165, 0, 1);
+}
+
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #f97316;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ✨ Footer Copyright - Glowing, Dynamic Effect */
+.footer-copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 1rem;
+  text-shadow: 0px 0px 10px rgba(255, 165, 0, 0.5);
+}
+
+/* 🌑 Dark Mode - Ultra Modern & Futuristic */
+[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, #1f1e2f, #4b0082); /* Smooth gradient of dark purples and blues */
+  border-top: 5px solid #bb86fc; /* Glowing border for dark mode */
+}
+
+[data-theme="dark"] .footer-title {
+  color: #bb86fc; /* Neon purple glow */
+  text-shadow: 0px 0px 25px rgba(187, 134, 252, 0.8), 0px 0px 60px rgba(139, 70, 252, 0.7);
+}
+
+[data-theme="dark"] .footer p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .footer-nav a {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .footer-nav a:hover {
+  color: #bb86fc;
+  text-shadow: 0px 0px 25px rgba(139, 70, 252, 0.8);
+}
+
+[data-theme="dark"] .footer-copyright {
+  color: rgba(255, 255, 255, 0.5);
+}

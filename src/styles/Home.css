@@ -1,0 +1,184 @@
+/* 🌟 The ULTIMATE MoodLens Homepage - GOAT Level */
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--home-bg);
+    animation: bgShift 12s infinite alternate ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+
+/* 🎭 MoodLens Title - Adaptive Light & Dark Mode */
+.home-title {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--title-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--title-shadow);
+    opacity: 0;
+    transform: scale(0.8) rotateX(-15deg);
+    animation: titleAppear 2s ease-out forwards, glowPulse 2.5s infinite alternate ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-title:hover {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+/* 🌊 Floating Subtitle */
+.home-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    background: var(--subtitle-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--subtitle-shadow);
+    margin-top: 1rem;
+    opacity: 0;
+    animation: subtitleFloat 3s infinite alternate ease-in-out, fadeIn 1.8s ease-in-out forwards;
+}
+
+/* 🚀 Call-to-Action Button */
+.home-cta {
+    margin-top: 2rem;
+    padding: 1.3rem 3rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    background: var(--cta-bg);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: var(--cta-shadow);
+    transition: background 0.4s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, pulseGlow 1.5s infinite alternate;
+}
+
+.home-cta:hover {
+    background: var(--cta-hover);
+    transform: scale(1.2);
+    box-shadow: var(--cta-shadow-hover);
+}
+
+/* 🌌 Dynamic Background Effect */
+@keyframes bgShift {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+/* 🎇 Cinematic Title Animation */
+@keyframes titleAppear {
+    0% { opacity: 0; transform: scale(0.8) rotateX(-15deg); }
+    50% { opacity: 0.8; transform: scale(1.1) rotateX(5deg); }
+    100% { opacity: 1; transform: scale(1) rotateX(0deg); }
+}
+
+/* ✨ Floating Effect */
+@keyframes subtitleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+/* 🔥 Button Glow Effect */
+@keyframes pulseGlow {
+    0% { box-shadow: var(--cta-shadow); }
+    100% { box-shadow: var(--cta-shadow-hover); }
+}
+
+/* 🌟 Harmonious Feature Cards */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    width: 320px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--feature-card-bg);
+    backdrop-filter: blur(15px);
+    border: 3px solid var(--feature-card-border);
+    border-color: #ff4500;
+    text-align: center;
+    box-shadow: var(--feature-card-shadow);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards, floatEffect 4s infinite alternate ease-in-out;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif; /* Apply the imported font */
+}
+
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--feature-card-shadow-hover);
+}
+
+/* 🔄 Subtle Floating Motion */
+@keyframes floatEffect {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+/* 🎭 Smooth Page Entry */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 🎨 Dynamic Color Variables - LIGHT MODE */
+:root {
+    --home-bg: linear-gradient(135deg, #fffbf0, #f5d6b3, #e6b04f); /* Subtle, warm golden gradients */
+    --title-gradient: linear-gradient(90deg, #ff7b00, #ffae42);
+    --title-shadow: 0px 0px 50px rgba(255, 165, 0, 1);
+    --subtitle-gradient: linear-gradient(90deg, #ffae42, #ff5733);
+    --subtitle-shadow: 0px 0px 30px rgba(255, 223, 0, 1);
+    --cta-bg: linear-gradient(45deg, #ff7b00, #ffae42);
+    --cta-hover: linear-gradient(45deg, #ff4500, #ffcc00);
+    --cta-shadow: 0px 10px 25px rgba(255, 165, 0, 0.7);
+    --cta-shadow-hover: 0px 12px 30px rgba(255, 69, 0, 1);
+    --feature-card-bg: rgba(255, 255, 255, 0.5); /* Soft, light card background */
+    --feature-card-border: rgba(255, 255, 255, 0.3);
+    --feature-card-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --feature-card-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.2);
+    --text-color: #2c2c2c; /* Deep, sophisticated text color */
+}
+
+/* 🌑 Dark Mode Colors */
+[data-theme="dark"] {
+    --home-bg: linear-gradient(135deg, #1e1e2f, #4b0082);
+    --title-gradient: linear-gradient(90deg, #ffae42, #ff7b00, #ffd700);
+    --title-shadow: 0px 0px 40px rgba(255, 165, 0, 1);
+    --subtitle-gradient: linear-gradient(90deg, #ffae42, #ff5733);
+    --subtitle-shadow: 0px 0px 50px rgba(255, 140, 0, 0.8);
+    --cta-bg: linear-gradient(45deg, #ff5733, #ffae42);
+    --cta-hover: linear-gradient(45deg, #ff4500, #ffcc00);
+    --cta-shadow: 0px 12px 30px rgba(255, 69, 0, 1);
+    --cta-shadow-hover: 0px 15px 35px rgba(255, 69, 0, 1);
+    --feature-card-bg: rgba(30, 30, 50, 0.7);
+    --feature-card-border: rgba(0, 0, 0, 0.1);
+    --feature-card-shadow: 0 12px 30px rgba(255, 255, 255, 0.1);
+    --feature-card-shadow-hover: 0 18px 40px rgba(255, 255, 255, 0.2);
+    --text-color: #f4dbdb; /* Light text for dark mode */
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+    .home-title { font-size: 3.5rem; }
+    .home-subtitle { font-size: 1.5rem; }
+    .features-container { flex-direction: column; align-items: center; }
+    .feature-card { width: 90%; }
+}

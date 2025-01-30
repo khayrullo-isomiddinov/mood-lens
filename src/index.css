@@ -1,0 +1,116 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Global text color for headings, paragraphs, and links */
+h1, h2, h3, p, a, label, .navbar-title {
+  color: var(--text-color); /* Use the text-color variable */
+}
+
+/* Remove unwanted margin/padding at the top */
+main {
+  margin-top: 0;
+  padding-top: 0;
+  padding: 0;
+}
+
+/* Ensure links adapt to theme */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color); /* Highlight links with the primary color */
+}
+
+/* Contact Form Submit Button */
+.contact-submit {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #6200ee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-container, .features-container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.contact-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(98, 0, 238, 0.5);
+}
+
+h1, h2, h3, .navbar-title {
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .features-container {
+    padding: 1rem;
+  }
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎨 Light Mode - New Background Color */
+:root {
+  --background-color: linear-gradient(180deg, #fdf6e3, #f5ebff); /* Peach to soft purple */
+  --text-color: #333333;
+  --primary-color: #4f46e5;
+  --secondary-color: #f97316;
+  --footer-bg: #4f46e5;
+}
+
+/* 🌑 Dark Mode */
+[data-theme="dark"] {
+  --background-color: #3232b8;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --secondary-color: #ffb74d;
+  --footer-bg: #3a3a5f;
+}
+
+/* ✅ Fix for Background Color */
+/* ✅ Light Mode Fix - Manually apply gradient */
+body {
+  background: linear-gradient(180deg, #eae7df, #cab330);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ Dark Mode Override */
+[data-theme="dark"] body {
+  background: #1e1e2f !important; /* Ensures dark mode works */
+}
+
+
+.hero-cta:hover {
+  background-color: #ff9060;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Box sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

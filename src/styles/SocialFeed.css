@@ -1,0 +1,135 @@
+/* 🌟 Social Feed Page Styling */
+.social-feed-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+    backdrop-filter: blur(15px); /* Frosted glass */
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* 🎨 Social Feed Title */
+.social-feed-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7b00, #ffae42);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 25px rgba(255, 165, 0, 0.8), 0px 0px 50px rgba(255, 100, 0, 0.6);
+    margin-bottom: 1rem;
+}
+
+/* 🎭 Social Feed Description */
+.social-feed-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 🚀 New Post Button */
+.new-post-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #4CAF50, #45d648); /* Green gradient */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.new-post-btn:hover {
+    background: linear-gradient(45deg, #45d648, #34a853);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.7);
+}
+
+/* 🎨 Post List */
+.social-feed-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-feed-post {
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism for posts */
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-feed-post:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* 🧠 Post Header */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.post-username {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ✨ Post Body (Mood & Message) */
+.post-mood {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #f97316; /* Orange for mood */
+}
+
+.post-message {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+}
+
+/* 🎇 Smooth Page Entry Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    .social-feed-container {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .social-feed-title {
+        font-size: 2.5rem;
+    }
+
+    .social-feed-description {
+        font-size: 1rem;
+    }
+
+    .new-post-btn {
+        width: 100%;
+    }
+}
