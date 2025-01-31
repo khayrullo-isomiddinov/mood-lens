@@ -16,7 +16,7 @@ const Dashboard = () => {
 
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/auth/me", {
+        const response = await fetch("https://moodlens-backend.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` }, // ✅ Fixed incorrect string formatting
         });
 
